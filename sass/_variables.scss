@@ -1,0 +1,16 @@
+$primary-color: #2C363F;
+$secondary-color:#E75A7C;
+$bg-color: #D6DBD2;
+$bg-color2:#050a0e;
+$nav-hover:#F2F5EA;
+$font-weights:(
+    "regular":400,
+    "medium":500,
+    "bold":700
+);
+$font-size:16px;
+@font-face{
+    font-family: 'Cyberpunk';
+    src: url(/webfonts/Cyberpunk.ttf) format("truetype");
+}
+

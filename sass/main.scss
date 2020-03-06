@@ -1,0 +1,111 @@
+@import 'fontawesome-all.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
+@import './resets';
+@import './variables';
+@import './mixins';
+@import './home';
+@import './menu';
+@import './sobre_mi';
+@import './proyectos';
+@import './contacto';
+@import './responsive';
+
+body, html{
+    height: 100vh;
+}
+body{
+    background:linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)),url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    color:set-text-color($primary-color);
+    font-family:'Source Sans Pro',sans-serif;
+    line-height: 1.65;
+    &::-webkit-scrollbar{
+        width: 0.25rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: $primary-color;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $secondary-color;
+    }
+    #bg{
+        background-image:url(../img/bg1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+        z-index: -1;    
+    }
+}
+.wrapper{
+    display: grid;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    grid-template-areas: 
+    "hd"
+    "mn"
+    "nav1";
+    grid-template-columns: 100%;
+    place-items: center;
+    justify-content: stretch;
+}
+h1, h2, h3{
+    font-weight: weight(regular);
+    letter-spacing: 0.5rem;
+    
+}
+h1.title, h2.title, h3.title{
+    width: max-content;
+    padding-bottom: 0.5rem;
+    border-bottom: solid 1px #ffffff;
+}
+a{
+    color:set-text-color($primary-color);
+    font-weight: 501;
+    text-decoration: none;
+}
+.text-secondary{
+    color: $secondary-color;
+    font-weight: weight(bold);
+    
+}
+.header{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    grid-area: hd;
+    place-self: end end;
+    width: 100%;
+}
+main{
+    max-width: 100%;
+    padding: 1rem;
+    grid-area: mn;  
+    place-self: center center;
+    justify-self: center;
+        p{
+            font-weight:weight(bold);
+        } 
+} 
+
+footer{
+    display: none;
+    grid-area: ft;
+    place-self: end end;
+    font-size:1rem;
+    bottom: 0.4rem;
+    right: 1rem;
+    text-align: right;
+    padding: 1rem;
+    color:set-text-color($primary-color);
+}
+.light{
+    @include theme($light_theme:true);
+    @include transition-ease;
+}

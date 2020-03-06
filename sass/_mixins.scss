@@ -1,0 +1,43 @@
+@mixin theme($light_theme: true) {
+    @if $light_theme{
+        background: url('../img/Moon.jpg') center;
+        background-size: cover;
+        color:set-text-color($primary-color);
+        }
+    }
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+}
+
+@function weight($weight_name){
+    @return map-get($font-weights, $weight_name);
+}
+
+@mixin text-shadow {
+    text-shadow: -0.5px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+}
+@function set-text-color($color){
+    @if(lightness($color)>40%){
+        @return #000;
+    }@else{
+        @return #fff;
+    }
+}
+
+@mixin media-md{
+    @media only screen and (min-width:768px){
+        @content;
+    }
+}
+@mixin media-lg{
+    @media screen and (min-width:1024px){
+        @content;
+    }
+}
+@mixin media-xl{
+    @media screen and (min-width:1600px){
+        @content;
+    }
+}
+

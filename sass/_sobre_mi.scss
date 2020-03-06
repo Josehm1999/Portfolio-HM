@@ -1,0 +1,44 @@
+
+    .sobre_mi-box{
+        align-items: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 100%;
+        border-radius: 4px;
+        padding: 3rem 1.5rem 0.5rem 1.5rem;
+        overflow: hidden;
+        background-color: $primary-color;
+        .image{
+            border: 0;
+            display: inline-block;
+            position: relative;  
+           &.main{
+                margin: 1.5rem 0;
+            }
+            &:before{
+            background-image: url(/img/overlay.png);
+			border-radius: 4px;
+			content: '';
+			height: 100%;
+			left: 0;
+			opacity: 0.5;
+			position: absolute;
+			top: 0;
+			width: 100%;
+            }
+            img{
+                width: 100%;
+                border-radius:4px;
+                overflow: hidden;
+			    display: block;
+            }
+        }
+        p{
+            margin: 0 0 2rem 0;
+        }
+    }
+   
+   
+

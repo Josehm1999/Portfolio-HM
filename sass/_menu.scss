@@ -1,0 +1,51 @@
+.nav{
+    bottom: 0;
+    grid-area: nav1;
+    position: absolute;
+    z-index: 4;
+    width: 100vw;
+    height: 5rem;
+    background: $primary-color;
+    opacity: 0.98;
+    @include transition-ease;
+    .menu-nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        @include transition-ease;
+        &_item{
+            width: 100%;
+            &:last-child{
+                margin-top: auto;
+            }
+        }
+        &_link {
+            height:5rem;
+            display: flex;
+            align-items: center;
+            color: set-text-color($primary-color);
+            filter: grayscale(100%) opacity(0.7);
+            @include transition-ease;
+            .link_text{
+                display: none;
+                margin-left: 1rem;
+            }
+            &:hover{
+                filter: grayscale(0%) opacity(1);
+                color: $secondary-color;
+                background: $nav-hover;
+            }
+            svg{
+                min-width: 2rem;
+                margin: 0 1.5rem;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,107 @@
+@include media-md {
+        body .wrapper{
+            position: relative;
+            grid-template-rows: 25% 50% 25%;
+            grid-template-columns: 5rem auto;
+            grid-template-areas: 
+            "nav1 hd hd"
+            "nav1 mn mn"
+            "nav1 . ft";
+            .nav{
+                top:0;
+                left: 0;
+                width: 5rem;
+                height: 100%;
+                &:hover{
+                    width: 16rem;
+                    .menu-nav_item.active > a svg{
+                        transform: rotate(-180deg);
+                     }
+                }
+                .menu-nav{
+                    flex-direction: column;
+                    &_item{
+                         
+                        &.active >a{
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            margin-bottom: 1rem;
+                            text-align: center;
+                            letter-spacing: 0.3ch;
+                            background: #5A7684;
+                            svg{
+                                transform: rotate(0deg);
+                                transition: transform 0.5s ease-in-out;
+                                }
+                        }
+                    }
+                }
+                &:hover{
+                    .link_text{
+                        display:block}
+                    .menu-nav_item.active > a svg{
+                       transform: rotate(-180deg);
+                    }
+                }
+            }
+            footer{
+                display: block;
+            }
+           
+        }
+        
+    .sobre_mi-box{
+        width: 40rem;
+    }
+    .sobre_mi-bio{
+        font-size:1.5rem;
+    }
+    .header{
+        .img{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            .text-secondary{
+                @include text-shadow;
+                font-family: cyberpunk;
+            }
+        }
+    }
+    .proyectos{
+        &-items{
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+        &-item{
+            height: 30vh;
+        }
+        .text-secondary{
+            font-size: 3rem;
+        }
+    }
+    .contacto-lista{
+        height: 15rem;
+        width: 50rem;
+    }
+}
+    
+@include media-lg{
+    .proyectos{
+        &-items{
+            grid-template-columns: repeat(3, 1fr);
+        } }
+        .contacto-lista{
+            grid-template-columns: repeat(3,1fr);
+        }
+}
+@include media-xl{
+    .proyectos{
+        .items{
+            height: 100vh;
+        }
+    }
+    
+}
+
