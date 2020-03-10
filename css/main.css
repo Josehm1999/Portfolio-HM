@@ -3,7 +3,8 @@
 @-ms-viewport {
   width: device-width;
 }
-* {
+*, *::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -35,7 +36,7 @@
   bottom: 0;
   grid-area: nav1;
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   width: 100vw;
   height: 5rem;
   background: #2C363F;
@@ -82,6 +83,10 @@
   margin: 0 1.5rem;
 }
 
+.wrapper.sobre_mi {
+  grid-template-rows: 0 auto 0;
+}
+
 .sobre_mi-box {
   align-items: center;
   position: relative;
@@ -122,18 +127,52 @@
 .sobre_mi-box p {
   margin: 0 0 2rem 0;
 }
-
-.header .img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.sobre_mi-box p a {
+  background-image: linear-gradient(120deg, #D6DBD2 0%, #D6DBD2 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 100%;
+  transition: all 0.5s ease-in-out;
 }
-.header .img .text-secondary {
+.sobre_mi-box p a:hover {
+  color: #E75A7C;
+  background-size: 100% 88%;
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background: #050a0e;
+  opacity: 0.7;
+  width: 110%;
+  top: -10px;
+  height: 23.5rem;
+  left: -5%;
+  border: 2px solid #E75A7C;
+  transform: rotate(-2deg);
+}
+.header .P-Header {
+  height: 100%;
+  position: relative;
+  width: 90%;
+  margin: 0 5%;
+}
+.header a {
   text-shadow: -0.5px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  font-size: 2rem;
+  position: absolute;
+  display: block;
+  height: 300px;
+  text-align: center;
+  color: #E75A7C;
+  top: 40%;
+  left: 2rem;
+  z-index: 2;
+  font-size: 52px;
   font-family: cyberpunk;
 }
 
@@ -235,7 +274,7 @@
 @media only screen and (min-width: 768px) {
   body .wrapper {
     position: relative;
-    grid-template-rows: 25% 50% 25%;
+    grid-template-rows: 18% auto 10%;
     grid-template-columns: 5rem auto;
     grid-template-areas: "nav1 hd hd" "nav1 mn mn" "nav1 . ft";
   }
@@ -284,16 +323,17 @@
     font-size: 1.5rem;
   }
 
-  .header .img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    width: 100%;
+  .header::before {
+    top: -4rem;
+    height: 10rem;
   }
-  .header .img .text-secondary {
-    text-shadow: -0.5px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-family: cyberpunk;
+  .header .P-Header {
+    margin: 0 auto;
+  }
+  .header a {
+    top: -10px;
+    font-size: 60px;
+    left: 25rem;
   }
 
   .proyectos-items {
@@ -301,9 +341,6 @@
   }
   .proyectos-item {
     height: 30vh;
-  }
-  .proyectos .text-secondary {
-    font-size: 3rem;
   }
 
   .contacto-lista {
@@ -330,9 +367,6 @@ body, html {
 }
 
 body {
-  background: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url(../img/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   color: #fff;
   font-family: "Source Sans Pro", sans-serif;
@@ -348,14 +382,14 @@ body::-webkit-scrollbar-thumb {
   background: #E75A7C;
 }
 body #bg {
-  background-image: url(../img/bg1.jpg);
+  background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url(../img/bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
 }
 
@@ -366,6 +400,7 @@ body #bg {
   width: 100%;
   grid-template-areas: "hd" "mn" "nav1";
   grid-template-columns: 100%;
+  grid-template-rows: 382px auto;
   place-items: center;
   justify-content: stretch;
 }
@@ -393,12 +428,10 @@ a {
 }
 
 .header {
-  position: absolute;
-  top: 0;
-  z-index: 5;
+  z-index: 4;
   grid-area: hd;
-  place-self: end end;
   width: 100%;
+  height: 100%;
 }
 
 main {

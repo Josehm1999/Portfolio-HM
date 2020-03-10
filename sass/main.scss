@@ -9,14 +9,10 @@
 @import './proyectos';
 @import './contacto';
 @import './responsive';
-
 body, html{
     height: 100vh;
 }
 body{
-    background:linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)),url(../img/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     width: 100%;
     color:set-text-color($primary-color);
     font-family:'Source Sans Pro',sans-serif;
@@ -31,14 +27,14 @@ body{
         background: $secondary-color;
     }
     #bg{
-        background-image:url(../img/bg1.jpg);
+        background-image:linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)),url(../img/bg1.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100vh;
+        width: 100%;
+        height: 100%;
         z-index: -1;    
     }
 }
@@ -52,6 +48,7 @@ body{
     "mn"
     "nav1";
     grid-template-columns: 100%;
+    grid-template-rows: 382px auto;
     place-items: center;
     justify-content: stretch;
 }
@@ -76,12 +73,10 @@ a{
     
 }
 .header{
-    position: absolute;
-    top: 0;
-    z-index: 5;
+    z-index: 4;
     grid-area: hd;
-    place-self: end end;
     width: 100%;
+    height: 100%;
 }
 main{
     max-width: 100%;

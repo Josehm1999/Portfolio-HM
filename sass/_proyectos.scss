@@ -1,16 +1,37 @@
 .header{
-    .img{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    position: relative;
+    overflow: hidden;
+    &::before{
+        content: '';
         position: absolute;
-        top:0;
-        width: 100%;
-        .text-secondary{
-            @include text-shadow;
-            font-size:2rem;
-            font-family: cyberpunk;
-        }
+        z-index: 1;
+        background:$bg-color2;
+        opacity: 0.7;
+        width: 110%;
+        top: -10px;
+        height: 23.5rem;
+        left: -5%;
+        border: 2px solid $secondary-color;
+        transform: rotate(-2deg);
+    }
+    .P-Header{
+        height: 100%;
+        position: relative;
+        width: 90%;
+        margin: 0 5%;
+    }
+    a{
+        @include text-shadow;
+        position: absolute;
+        display: block;
+        height: 300px;
+        text-align: center;
+        color: $secondary-color;
+        top: 40%;
+        left: 2rem;
+        z-index:2;
+        font-size:52px;
+        font-family: cyberpunk;
     }
 }
 
