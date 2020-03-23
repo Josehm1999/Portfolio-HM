@@ -32,10 +32,83 @@
   font-weight: 700;
 }
 
+#carousel-proyectos {
+  position: relative;
+  height: 40vh;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.carousel__images {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__track-container {
+  background: transparent;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel__slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #E75A7C;
+  border: 0;
+  cursor: pointer;
+}
+.carousel__button--left {
+  left: -25px;
+}
+.carousel__button--right {
+  right: -25px;
+}
+.carousel__button svg {
+  width: 20px;
+}
+
+.carousel__nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.carousel__nav .carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 0 12px;
+  background: #E75A7C;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.carousel__nav .carousel__indicator.slide-actual {
+  opacity: 0.8;
+}
+
 .nav {
   bottom: 0;
   grid-area: nav1;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   width: 100vw;
   height: 5rem;
@@ -151,7 +224,7 @@
   opacity: 0.7;
   width: 110%;
   top: -10px;
-  height: 23.5rem;
+  height: 20.5rem;
   left: -5%;
   border: 2px solid #E75A7C;
   transform: rotate(-2deg);
@@ -166,13 +239,13 @@
   text-shadow: -0.5px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   position: absolute;
   display: block;
-  height: 300px;
+  height: 100px;
   text-align: center;
   color: #E75A7C;
-  top: 40%;
-  left: 2rem;
+  top: 34%;
+  left: 1rem;
   z-index: 2;
-  font-size: 52px;
+  font-size: 54px;
   font-family: cyberpunk;
 }
 
@@ -194,6 +267,7 @@
 .proyectos-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .proyectos-item::after, .proyectos-item::before {
   position: absolute;
@@ -271,6 +345,24 @@
   font-size: 1.5rem;
 }
 
+@media only screen and (min-width: 475px) {
+  body .wrapper {
+    grid-template-rows: 270px auto 5rem;
+  }
+
+  .header::before {
+    top: -5rem;
+  }
+  .header a {
+    top: 25%;
+    left: 3rem;
+    font-size: 65px;
+  }
+
+  .proyectos-item {
+    height: 30vh;
+  }
+}
 @media only screen and (min-width: 768px) {
   body .wrapper {
     position: relative;
@@ -333,7 +425,7 @@
   .header a {
     top: -10px;
     font-size: 60px;
-    left: 25rem;
+    left: 31%;
   }
 
   .proyectos-items {
@@ -400,9 +492,8 @@ body #bg {
   width: 100%;
   grid-template-areas: "hd" "mn" "nav1";
   grid-template-columns: 100%;
-  grid-template-rows: 382px auto;
+  grid-template-rows: 350px auto 5rem;
   place-items: center;
-  justify-content: stretch;
 }
 
 h1, h2, h3 {

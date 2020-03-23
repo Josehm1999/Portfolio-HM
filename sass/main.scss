@@ -48,9 +48,8 @@ body{
     "mn"
     "nav1";
     grid-template-columns: 100%;
-    grid-template-rows: 382px auto;
+    grid-template-rows: 350px auto 5rem;
     place-items: center;
-    justify-content: stretch;
 }
 h1, h2, h3{
     font-weight: weight(regular);

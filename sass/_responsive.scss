@@ -1,3 +1,23 @@
+@include media-s{
+    body .wrapper{
+        grid-template-rows: 270px auto 5rem;
+    }
+    .header{
+        &::before{
+            top:-5rem;
+        }
+        a{
+            top:25%;
+            left: 3rem;
+            font-size: 65px;
+        }
+    }
+    .proyectos{
+        &-item{
+            height: 30vh;
+        }
+    }
+}
 @include media-md {
         body .wrapper{
             position: relative;
@@ -67,7 +87,7 @@
         a{
             top: -10px;
             font-size: 60px;
-            left: 25rem;
+            left: 31%;
         }
     }
     .proyectos{

@@ -1,39 +1,60 @@
 $(document).ready(function () {
     // Variables
     var change_theme = $(".change_theme");
-    const menuBTn= $('.menu-btn');
-    const hamburger=$('.menu-btn_burger');
-    const nav=$('.nav');
-    const Menu_nav=$('.menu-nav');
-    const Menu_item=$('li.menu-nav_item');
-    let showMenu=false;
-   
+    const track=$('.carousel__track');
+    const sgtBTn=$('.carousel__button--right');
+    const prevBTn=$('.carousel__button--left');
+    const dotsNav=$('.carousel__nav');
+    const dots=Array.from(dotsNav.children());    
+    const slides= Array.from(track.children());
+    //const slideWidth= slides[0].getBoundingClientRect().width;
+    
 
-    // Boton_Menú
-    menuBTn.click(function(){
-        if(!showMenu){
-            hamburger.addClass('open');
-            nav.addClass('open');
-            Menu_nav.addClass('open');
-            Menu_item.addClass('open');
-            showMenu=true;
-        }else{
-            hamburger.removeClass('open');
-            nav.removeClass('open');
-            Menu_nav.removeClass('open');
-            Menu_item.removeClass('open');
-            showMenu=false;
-        }
-    });
+//     //Alineamiento de las slides
+//     const setSlidePosition =(slides, index) =>{
+//         slides.style.left=slideWidth * index +'px';
+//     }
+//     slides.forEach(setSlidePosition);
 
-    // Cambiar Theme
-    change_theme.click(function () {
-        if (change_theme.val() == "Dark") {
-            $('.home').addClass("light");
-            change_theme.val("Light");
-        } else {
-            $('.home').removeClass("light");
-            change_theme.val("Dark");
-        };
-    });
-});
+//     const movimientoSlide =(track ,Slideactiva, SlideObjetivo) =>{
+//                 track.css('transform','translateX(-'+SlideObjetivo.css('left')+')');
+//                 Slideactiva.removeClass("activa");
+//                 SlideObjetivo.addClass("activa");
+//     }; 
+//     //Click en la flecha derecha, mover las slides en dicha dirección
+//     sgtBTn.click(function(e){
+//         const Slideactiva = $('.activa');
+//         const SgtSlide = Slideactiva.next();
+//         //Mover slide
+//             movimientoSlide(track,Slideactiva,SgtSlide);
+        
+//     });
+//     prevBTn.click(function(){
+//         const Slideactiva = $('.activa');
+//         const AnteriorSlide = Slideactiva.prev();
+//         console.log(AnteriorSlide);
+//         //Mover Slide
+//         movimientoSlide(track,Slideactiva,AnteriorSlide);
+//     });
+//    /* dotsNav.click(function(e){
+//         const targetDot=e.target.closest('button');
+//         const Slideactiva = $('.activa');
+//         const BTnactivo =$('.activa');
+//         const targetIndex= dots.findIndex(dot => dot === targetDot);
+//         const targetSlide =slides[targetIndex];
+//         movimientoSlide(track,Slideactiva,targetSlide);
+//         BTnactivo.removeClass("activa");
+//         targetDot.addClass("activa");
+//     });*/
+
+//     // Cambiar Theme
+//     change_theme.click(function () {
+//         if (change_theme.val() == "Dark") {
+//             $('.home').addClass("light");
+//             change_theme.val("Light");
+//         } else {
+//             $('.home').removeClass("light");
+//             change_theme.val("Dark");
+//         };
+//     });
+ });

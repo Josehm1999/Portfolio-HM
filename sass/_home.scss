@@ -15,3 +15,71 @@
         font-weight: weight(bold);
     }
 }
+#carousel-proyectos{
+    position: relative;
+    height: 40vh;
+    width: 70%;
+    margin: 1rem auto;
+}
+
+.carousel__images{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__track-container{
+    background: transparent;
+    height: 100%;
+    overflow: hidden;
+}
+.carousel__track{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+    position: relative;
+    @include transition-ease;
+}
+.carousel__slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+.carousel__button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: $secondary-color;
+    border: 0;
+    cursor: pointer;
+    &--left{
+        left: -25px;
+    }
+    &--right{
+        right: -25px;
+    }
+    svg{
+        width: 20px;
+    }
+}
+.carousel__nav{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    .carousel__indicator{
+        border: 0;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        margin: 0 12px;
+        background: $secondary-color;
+        cursor: pointer;
+        opacity: .5;
+        &.slide-actual{
+            opacity: 0.8;
+        }
+    }
+}
